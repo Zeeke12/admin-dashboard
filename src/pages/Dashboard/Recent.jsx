@@ -42,11 +42,33 @@ const Recent = () => {
     ]
   return (
     <div className='w-full text-black dark:text-white text-sm my-10'>
-        <div>Recent Orders</div>
-        <div className='flex flex-row justify-center gap-[50px] bg-white rounded-2xl shadow-2xl hover:shadow transition-shadow dark:bg-[#202528] p-5'>
-            <div><h1>Product Name</h1></div>
+        <div className='text-2xl font-bold'>Recent Orders</div>
+        <div className='-[50px] bg-white rounded-2xl shadow-2xl hover:shadow transition-shadow dark:bg-[#202528] p-5'>
             <div>
-                {products.map((product, index) => <RecentOrders key={index} productStatus={product.productStatus} productname={product.productname} productnumber={product.productnumber} productpayment={product.productpayment}  />)}</div>
+                <table className='w-full text-center'>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product Number</th>
+                        <th>Payment</th>
+                        <th className='hidden md:block '>Status</th>
+                    </tr>
+                {products.map((product, index) => <tr className='border-b px-[120px] h-9 font-thin' key={index}>
+                    <td>
+                        {product.productname}
+                    </td>
+                    <td>
+                        {product.productnumber}
+                    </td>
+                    <td>
+                        {product.productpayment}
+                    </td>
+                    <td className='hidden md:block '>
+                        {product.productStatus}
+                    </td>
+                    <td className='hidden md:block '>Details</td>
+                </tr>)}
+                </table>
+                </div>
         </div>
     </div>
   )

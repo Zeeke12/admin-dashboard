@@ -31,7 +31,7 @@ const SideBar = () => {
         },
     ]
   return (
-    <div className='w-[196px] px-[30px] py-6 mx-[25px]'>
+    <div className='w-[196px] px-[30px]  mx-[25px] hidden md:block'>
         <div className='flex flex-col  text-gray-800'>
         {sidetexts.map((sidetext, index) => <div className='text-[#7D8DA1] text-sm w-[168px] font-semibold h-[51px] px-[28px] hover:translate-x-5 hover:text-blue-700 transition-transform py-2' key={index}>{sidetext.text}</div>)}
         </div>

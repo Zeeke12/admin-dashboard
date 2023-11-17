@@ -23,9 +23,9 @@ const RecentUpdate = () => {
         }
     ]
   return (
-    <div>
+    <div className='w-full md:w-full  mx-auto'>
         <h1>Recent Updates</h1>
-        <div className='bg-white dark:bg-[#202528] shadow-2xl hover:shadow transition-shadow rounded-2xl p-3'>
+        <div className='w-full dark:bg-[#202528] mr-30 shadow-2xl hover:shadow transition-shadow rounded-2xl p-3'>
             {updates.map((update, index) => <Updates key={index} image={update.image} title={update.title} time={update.time}  /> )}
         </div>
     </div>
