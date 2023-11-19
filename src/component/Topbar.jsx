@@ -59,7 +59,7 @@ const Topbar = () => {
             <img src={image} className='h-10 w-10 rounded-full' alt='Zeke'/>
         </div>
     </div>
-    <div className={`h-screen fixed shadow-blue-700 drop-shadow-2xl shadow-2xl left-0 top-0 px-[30px] py-10 bg-white ${open ? 'block' : 'hidden'} transition-transform`}>
+    <div className={`h-screen  fixed shadow-blue-700 drop-shadow-2xl shadow-2xl left-0 top-0 px-[30px] py-10 bg-white dark:bg-[#181A1E] ${open ? 'block' : 'hidden'} transition-transform`}>
         <button className='fixed top-3 right-0 ' onClick={() => setOpen(!open)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 </svg>
