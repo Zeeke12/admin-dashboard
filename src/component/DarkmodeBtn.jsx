@@ -15,13 +15,15 @@ const DarkModeBtn = () => {
     setDarkMode(!darkMode);
   };
   return (
-    <button onClick={toggleDarkMode} className={`${
-        darkMode
-          ? 'bg-gray-800 text-white'
-          : 'bg-gray-200 text-gray-800'
-      } p-2 rounded-md hover:bg-gray-600`}
-    >
-      {darkMode ? 'Light Mode' : 'Dark Mode'}
+    <button onClick={toggleDarkMode} className='flex-row flex bg-#E2E3F0'>
+      <div className={`${
+        darkMode ? 'bg-#181A1E' : 'bg-blue-400'} p-2 rounded-md`}>
+      <ion-icon name='partly-sunny-outline'></ion-icon>
+      </div>
+      <div className={`${
+        darkMode ? 'bg-blue-400': 'bg-#181A1E'  } p-2 rounded-md`}>
+      <ion-icon name='moon-outline'></ion-icon>
+      </div>
     </button>
   );
 };

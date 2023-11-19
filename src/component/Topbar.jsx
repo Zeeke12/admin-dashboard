@@ -3,34 +3,44 @@ import DarkModeBtn from './DarkmodeBtn'
 import { useState } from 'react'
 import image from '../assets/profile-1.jpg'
 
+
 const Topbar = () => {
   const sidetexts = [
     {
-      text: "Dashboard"
+      text: "Dashboard",
+      logo: 'grid'
     },
     {
-      text: "Customer"
+      text: "Customer",
+      logo: 'person'
     },
     {
-        text: "Order"
+        text: "Order",
+        logo: 'newspaper'
       },
     {
-        text: "Analytics"
+        text: "Analytics",
+        logo: 'analytics'
     },
     {
-        text: "Messages"
+        text: "Messages",
+        logo: 'chatbox-ellipses'
       },
-    {
-        text: "Products"
+      {
+        text: "Products",
+        logo: 'print'
     },
     {
-        text: "Report"
+        text: "Report",
+        logo: 'alert-circle'
     },
     {
-        text: "Settings"
+        text: "Settings",
+        logo: 'settings'
     },
     {
-        text: "Add Product"
+        text: "Add Product",
+        logo: 'add'
     },
 ]
 
@@ -55,7 +65,7 @@ const Topbar = () => {
 </svg>
 </button>
         <div className='flex flex-col  text-gray-800'>
-        {sidetexts.map((sidetext, index) => <div className='text-[#7D8DA1] text-sm w-[168px] font-semibold h-[51px] px-[28px] hover:translate-x-5 hover:text-blue-700 transition-transform py-2' key={index}>{sidetext.text}</div>)}
+        {sidetexts.map((sidetext, index) => <div className='text-[#7D8DA1] text-sm w-[168px] flex flex-row gap-[20px] font-semibold h-[51px] px-[28px] hover:translate-x-5 hover:text-blue-700 transition-transform py-2' key={index}><ion-icon name={`${sidetext.logo}-outline`} className='text-blue-500' size='small'></ion-icon> <div>{sidetext.text}</div></div>)}
         </div>
         <div className='text-[#7D8DA1] text-sm w-[168px] h-[51px] px-[28px] my-16 md:my-5 hover:translate-x-5 transition-transform py-2'>Log Out</div>
     </div>
