@@ -1,53 +1,46 @@
 import React from 'react'
-import { LuLayoutDashboard } from "react-icons/lu";
 
-
-const SideBar = () => {
+const SideBar = ({ onClose }) => {
     const sidetexts = [
         {
-          text: "Dashboard",
-          logo: 'grid'
+            title: 'Dashboard',
+            icon: 'person'
         },
         {
-          text: "Customer",
-          logo: 'person'
+            title: 'Customers',
+            icon: 'grid_view'
         },
         {
-            text: "Order",
-            logo: 'newspaper'
-          },
-        {
-            text: "Analytics",
-            logo: 'analytics'
+            title: 'Orders',
+            icon: 'receipt_long'
         },
         {
-            text: "Messages",
-            logo: 'chatbox-ellipses'
-          },
-          {
-            text: "Products",
-            logo: 'print'
+            title: 'Analytics',
+            icon: 'insights'
         },
         {
-            text: "Report",
-            logo: 'alert-circle'
+            title: 'Messages',
+            icon: 'mail_outline'
         },
         {
-            text: "Settings",
-            logo: 'settings'
+            title: 'Products',
+            icon: 'inventory'
         },
         {
-            text: "Add Product",
-            logo: 'add'
+            title: 'Reports',
+            icon: 'error'
+        },
+        {
+            title: 'Settings',
+            icon: 'settings'
         },
     ]
   return (
-    <div className='w-[180px] px-[30px]  mx-[25px] hidden md:block'>
-      <h1 className='text-4xl text-gray-700 dark:text-white font-extrabold mb-10'>Zeke</h1>
-        <div className='flex flex-col  text-gray-800'>
-        {sidetexts.map((sidetext, index) => <div className='text-[#7D8DA1] flex flex-row gap-[20px] text-sm w-[168px] font-semibold h-[51px] px-[28px] hover:translate-x-5 items-center hover:text-blue-700 transition-transform py-2' key={index}> <ion-icon name={`${sidetext.logo}-outline`} className='text-blue-500' size='small'></ion-icon> <div>{sidetext.text}</div></div>)}
-        </div>
-        <div className='text-[#7D8DA1] text-sm w-[168px] h-[51px] px-[28px] my-5 hover:translate-x-5 transition-transform py-2'> Log Out</div>
+    <div className='sidebar hidden min-[1000px]:flex min-[1000px]:flex-col  min-[1000px]:align-middle min-[1000px]:px-[50px] max-[1300px]:w-[100px] max-[1300px]:mr-[50px]  w-[250px] h-screen text-center'>
+        <div><h1 className='text-3xl my-5 font-extrabold text-[#363949] dark:text-white'>Zeke</h1></div>
+        <div className='flex flex-col gap-3'>{sidetexts.map((sidetext, index) => (<div key={index} className='w-[180px] h-[50px] flex flex-row pl-[30px] gap-3 pt-3 text-[#7380EC] font-semibold  hover:translate-x-3 transition-transform hover:bg-[#E2E3F0] hover:dark:bg-[#0E1012] max-[1300px]:w-fit max-[1300px]:pr-4'><span class="material-symbols-outlined">{sidetext.icon}
+</span><h1 className='text-left max-[1300px]:hidden'>{sidetext.title}</h1></div>))}</div>
+        <div></div>
     </div>
   )
 }
