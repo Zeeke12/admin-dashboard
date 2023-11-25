@@ -23,7 +23,7 @@ const Chart = () => {
     ]
   return (
     <div className='flex flex-col min-[1200px]:flex-row justify-around gap-5'>
-        {chartdatas.map((chartdata, index) => (<div key={index} className='bg-white dark:bg-[#202528] hover:shadow shadow-2xl rounded-3xl h-[200px] flex-grow'>
+        {chartdatas.map((chartdata, index) => (<div key={index} className='bg-white dark:bg-[#202528] transition-colors duration-1000 hover:shadow hover:transition-shadow hover:duration-1000 shadow-2xl rounded-3xl h-[200px] flex-grow'>
 
         </div>))}
     </div>

@@ -54,23 +54,23 @@ const Orders = () => {
 ]
 
   return (
-    <div className='flex-grow bg-white dark:bg-[#202528] rounded-2xl flex justify-center shadow-2xl hover:shadow'>
+    <div className='flex-grow bg-white dark:bg-[#202528] transition-colors duration-1000 rounded-2xl flex justify-center shadow-2xl  hover:transition-shadow hover:duration-1000 hover:shadow p-7'>
       <table class="table-auto text-center">
   <thead>
-    <tr className='flex flex-row'>
-      <th className='px-10'>Product Name</th>
-      <th className='px-10'>Product Number</th>
-      <th className='px-10'>Payment</th>
-      <th className='px-10'>Status</th>
+    <tr className='flex flex-row  text-black dark:text-white transition-colors duration-1000'>
+      <th className=' w-[250px]'>Product Name</th>
+      <th className=' w-[180px]'>Product Number</th>
+      <th className=' w-[100px] max-[850px]:hidden'>Payment</th>
+      <th className=' w-[100px] max-[850px]:hidden'>Status</th>
     </tr>
   </thead>
   <tbody>
-  {orderdatas.map((orderdata, index) => (<tr key={index} className='flex flex-row'>
-          <td className='px-10 w-[250px]'>{orderdata.name}</td>
-          <td className='px-10 w-[180px]'>{orderdata.number}</td>
-          <td className='px-10 w-[100px]'>{orderdata.payment}</td>
-          <td className='px-10 w-[100px]'>{orderdata.status}</td>
-          <td className='px-10 w-[70px]'>Details</td>
+  {orderdatas.map((orderdata, index) => (<tr key={index} className='flex flex-row font-thin text-[#677486]'>
+          <td className=' w-[250px] border-b'>{orderdata.name}</td>
+          <td className=' w-[180px] border-b'>{orderdata.number}</td>
+          <td className=' w-[100px] max-[850px]:hidden border-b'>{orderdata.payment}</td>
+          <td className={`w-[100px] max-[850px]:hidden border-b text-${orderdata.color}-800`}>{orderdata.status}</td>
+          <td className=' w-[70px] border-b text-blue-400'>Details</td>
         </tr>))}
   </tbody>
 </table>
