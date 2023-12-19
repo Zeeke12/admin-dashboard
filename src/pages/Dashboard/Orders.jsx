@@ -53,28 +53,35 @@ const Orders = () => {
         },
 ]
 
-  return (
-    <div className='flex-grow bg-white dark:bg-[#202528] transition-colors duration-1000 rounded-2xl flex justify-center shadow-2xl  hover:transition-shadow hover:duration-1000 hover:shadow p-7'>
-      <table class="table-auto text-center">
-  <thead>
-    <tr className='flex flex-row  text-black dark:text-white transition-colors duration-1000'>
-      <th className=' w-[250px]'>Product Name</th>
-      <th className=' w-[180px]'>Product Number</th>
-      <th className=' w-[100px] max-[850px]:hidden'>Payment</th>
-      <th className=' w-[100px] max-[850px]:hidden'>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-  {orderdatas.map((orderdata, index) => (<tr key={index} className='flex flex-row font-thin text-[#677486]'>
-          <td className=' w-[250px] border-b'>{orderdata.name}</td>
-          <td className=' w-[180px] border-b'>{orderdata.number}</td>
-          <td className=' w-[100px] max-[850px]:hidden border-b'>{orderdata.payment}</td>
-          <td className={`w-[100px] max-[850px]:hidden border-b text-${orderdata.color}-800`}>{orderdata.status}</td>
-          <td className=' w-[70px] border-b text-blue-400'>Details</td>
+  return  (
+    <div className='my-9 mx-4 grid '>
+      <h1 className='text-2xl my-2 pt-3 pb-1 font-bold text-[#363949] dark:text-white transition-colors duration-100'>Recent Orders</h1>
+    <div className='bg-white dark:bg-[#202528] transition-colors duration-100 rounded-2xl flex justify-center shadow-2xl p-[25px] hover:transition-shadow hover:shadow '>
+    <div class="relative">
+      <table class="table-fixed text-[13px] text-black dark:text-white max-[1300px]:w-full">
+        <thead>
+          <tr >
+            <th class="py-1 pl-[50px] w-3/7 text-center">Product Name</th>
+            <th class="py-1 pl-[50px] w-2/7 text-center">Product Number</th>
+            <th class="py-1 pl-[50px] w-1/7 text-center max-[800px]:hidden">Payment</th>
+            <th class="py-1 pl-[50px] w-1/7 text-center max-[800px]:hidden">Status</th>
+            <th class=""></th>
+          </tr>
+        </thead>
+        <tbody>
+        {orderdatas.map((orderdata, index) => (<tr key={index}  >
+          <td className='text-center py-3 pl-[50px]  border-b'>{orderdata.name}</td>
+          <td className='text-center py-3  pl-[50px] border-b'>{orderdata.number}</td>
+          <td className='text-center py-3  pl-[50px] border-b max-[800px]:hidden'>{orderdata.payment}</td>
+          <td className={`text-${orderdata.color}-800 text-center py-3 pl-[50px]  border-b max-[800px]:hidden`}>{orderdata.status}</td>
+          <td className='text-center py-3  pl-[50px] text-blue-400 border-b pr-[50px] '>Details</td>
         </tr>))}
-  </tbody>
-</table>
+        </tbody>
+      </table>
     </div>
+    </div>
+    </div>
+
   )
 }
 

@@ -15,7 +15,7 @@ const DarkModeBtn = () => {
     setDarkMode(!darkMode);
   };
   return (
-    <button onClick={toggleDarkMode} className='flex-row flex bg-#E2E3F0'>
+    <button onClick={toggleDarkMode} className='flex-row flex'>
       <div className={`${
         darkMode ? 'bg-#181A1E' : 'bg-blue-400'} p-2 rounded-md`}>
       <ion-icon name='partly-sunny-outline'></ion-icon>
