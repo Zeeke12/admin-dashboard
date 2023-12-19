@@ -53,7 +53,7 @@ const RightBoard = () => {
     ]
   return (
     <div className='w-full md:w-fit h-screen  px-5'>
-        <div className='fixed top-0 py-5 left-0 md:relative flex justify-between align-middle w-screen md:w-full bg-white md:bg-inherit h-[90px] z-40 dark:bg-[#202528] md:dark:bg-inherit px-3 text-black dark:text-white transition-colors duration-100'>
+        <div className='fixed top-0 py-5 left-0 md:relative flex justify-between align-middle w-screen md:w-full bg-white md:bg-inherit h-[90px] z-30 dark:bg-[#202528] md:dark:bg-inherit px-3 text-black dark:text-white transition-colors duration-100'>
             <button className='block md:hidden' onClick={showSidebar}><span class="material-symbols-outlined">
                 menu
             </span></button>

@@ -36,7 +36,7 @@ const Sidebar = ({ onClose }) => {
     },
 ]
   return (
-    <div className='sidebar w-[250px] bg-white dark:bg-[#202528] transition-transform duration-1000 fixed top-0 h-screen drop-shadow-2xl shadow-[#4B5495] shadow-2xl'>
+    <div className='sidebar w-[250px] z-50 bg-white dark:bg-[#202528] transition-transform duration-1000 fixed top-0 h-screen drop-shadow-2xl shadow-[#4B5495] shadow-2xl'>
         <div className='flex flex-row justify-between'>
           <h1 className='text-3xl my-5 pl-3 font-extrabold text-[#363949] dark:text-white'>Zeke</h1>
           <button onClick={onClose}><span class="material-symbols-outlined">
