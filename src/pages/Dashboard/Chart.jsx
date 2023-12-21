@@ -23,11 +23,11 @@ const Chart = () => {
         },
     ]
   return (
-    <motion.div  className='flex flex-col min-[1300px]:flex-row justify-around gap-5'>
-        {chartdatas.map((chartdata, index) => (<div key={index} className='bg-white dark:bg-[#202528] transition-colors duration-100 hover:shadow hover:transition-shadow  shadow-2xl rounded-3xl h-[200px] flex-grow'>
+    <div  className='flex flex-col min-[1300px]:flex-row justify-around gap-5'>
+        {chartdatas.map((chartdata, index) => (<motion.div initial={{ y: 40 }} whileInView={{ y: 0 }} transition={{ duration: 1 }} key={index} className='bg-white dark:bg-[#202528] transition-colors duration-100 hover:shadow hover:transition-shadow  shadow-2xl rounded-3xl h-[200px] flex-grow'>
 
-        </div>))}
-    </motion.div>
+        </motion.div>))}
+    </div>
   )
 }
 

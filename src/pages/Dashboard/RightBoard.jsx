@@ -1,13 +1,16 @@
 import React from 'react'
 import profile from '../../assets/profile-1.jpg'
-import showSidebar from '../../component/showSidebar'
 import profile1 from '../../assets/profile-1.jpg'
 import profile2 from '../../assets/profile-2.jpg'
 import profile3 from '../../assets/profile-3.jpg'
 import DarkmodeBtn from '../../component/DarkmodeBtn'
+import { motion } from 'framer-motion'
+import { useSidebar } from '../../component/SideBarContext'
 
 
 const RightBoard = () => {
+    const { toggleSidebar } = useSidebar();
+
     const updates = [
         {
             logo: profile1,
@@ -52,9 +55,9 @@ const RightBoard = () => {
         },
     ]
   return (
-    <div className='w-full md:w-fit h-screen  px-5'>
-        <div className='fixed top-0 py-5 left-0 md:relative flex justify-between align-middle w-screen md:w-full bg-white md:bg-inherit h-[90px] z-30 dark:bg-[#202528] md:dark:bg-inherit px-3 text-black dark:text-white transition-colors duration-100'>
-            <button className='block md:hidden' onClick={showSidebar}><span class="material-symbols-outlined">
+    <motion.div  className='w-full md:w-fit h-screen  px-5'>
+        <div className='fixed top-0 py-5 left-0 md:relative flex justify-between align-middle w-screen md:w-full bg-white md:bg-inherit h-[90px] z-10 dark:bg-[#202528] md:dark:bg-inherit px-3 text-black dark:text-white transition-colors duration-100'>
+            <button className='block md:hidden' onClick={toggleSidebar}><span class="material-symbols-outlined">
                 menu
             </span></button>
             <DarkmodeBtn />
@@ -91,7 +94,7 @@ const RightBoard = () => {
                 <h1>Add Product</h1>
             </div>
         </div>
-    </div>
+    </motion.div>
 
   )
 }

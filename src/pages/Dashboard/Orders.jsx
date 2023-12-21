@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Orders = () => {
     const orderdatas = [
@@ -54,7 +55,7 @@ const Orders = () => {
 ]
 
   return  (
-    <div className='my-9 mx-4 grid '>
+    <motion.div initial={{ y: 40 }} whileInView={{ y: 0 }} transition={{ duration: 1 }} className='my-9 mx-4 grid '>
       <h1 className='text-2xl my-2 pt-3 pb-1 font-bold text-[#363949] dark:text-white transition-colors duration-100'>Recent Orders</h1>
     <div className='bg-white dark:bg-[#202528] transition-colors duration-100 rounded-2xl flex justify-center shadow-2xl p-[25px] hover:transition-shadow hover:shadow '>
     <div class="relative overflow-x-auto">
@@ -80,7 +81,7 @@ const Orders = () => {
       </table>
     </div>
     </div>
-    </div>
+    </motion.div>
 
   )
 }
