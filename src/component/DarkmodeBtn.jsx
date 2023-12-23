@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 const DarkModeBtn = () => {
 
   const [darkMode, setDarkMode] = useState(() => {
     return JSON.parse(localStorage.getItem('darkMode')) || false;
   });
+
+  const TOGGLE_CLASSES =
+  "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10";
+
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -15,17 +21,43 @@ const DarkModeBtn = () => {
     setDarkMode(!darkMode);
   };
   return (
-    <button onClick={toggleDarkMode} className='flex-row flex'>
-      <div className={`${
-        darkMode ? 'bg-#181A1E' : 'bg-blue-400'} p-2 rounded-md`}>
-      <ion-icon name='partly-sunny-outline'></ion-icon>
+    <div className="relative flex w-fit items-center rounded-full">
+      <button
+        className={`${TOGGLE_CLASSES} ${
+          darkMode ? "text-white" : "text-slate-300"
+        }`}
+        onClick={toggleDarkMode}
+      >
+        <FiMoon className="relative z-10 text-lg md:text-sm" />
+        <span className="relative z-10">Light</span>
+      </button>
+      <button
+        className={`${TOGGLE_CLASSES} ${
+          darkMode  ? "text-white" : "text-slate-800"
+        }`}
+        onClick={toggleDarkMode}
+      >
+        <FiSun className="relative z-10 text-lg md:text-sm" />
+        <span className="relative z-10">Dark</span>
+      </button>
+      <div
+        className={`absolute inset-0 z-0 flex ${
+          darkMode  ? "justify-end" : "justify-start"
+        }`}
+      >
+        <motion.span
+          layout
+          transition={{ type: "spring", damping: 15, stiffness: 250 }}
+          className="h-full w-1/2 rounded-full bg-[#7B8AB0]"
+        />
       </div>
-      <div className={`${
-        darkMode ? 'bg-blue-400': 'bg-#181A1E'  } p-2 rounded-md`}>
-      <ion-icon name='moon-outline'></ion-icon>
-      </div>
-    </button>
+    </div>
   );
 };
+
+
+
+
+
 
 export default DarkModeBtn;
