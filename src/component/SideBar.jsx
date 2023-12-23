@@ -44,7 +44,7 @@ const SideBar = () => {
  return (
     <div>
     <div 
-    className={`z-50 hidden md:flex flex-col align-middle px-[50px] max-[1300px]:w-[100px] max-[1300px]:mr-[50px] w-[250px] h-screen text-center`}>
+    className={`z-50 hidden md:flex flex-col align-middle px-[50px] max-[1300px]:w-[100px] max-[1300px]:mr-[50px] w-[250px] bg-transparent h-screen text-center`}>
         <div className='flex flex-row gap-20'><h1 className='text-3xl my-5 font-extrabold text-[#363949] dark:text-white'>Zeke</h1>
         
         </div>
@@ -60,7 +60,7 @@ const SideBar = () => {
     animate={{ x: isSidebarOpen ? 0 : -300 }} 
     exit={{ x: isSidebarOpen ? 0 : -300 }} 
     transition={{ duration: 1 }}
-    className={`z-50 max-[768px]:bg-white max-[768px]:shadow-2xl max-[768px]:shadow-[#7380EC] max-[768px]:w-fit max-[768px]:px-10 max-[768px]:fixed top-0 left-0 md:flex md:flex-col md:align-middle md:px-[50px] max-[1300px]:w-[100px] max-[1300px]:mr-[50px] w-[250px] h-screen text-center`}>
+    className={`z-50 bg-white dark:bg-[#202528] shadow-2xl shadow-[#7380EC] w-fit px-10 fixed top-0 left-0   h-screen text-center`}>
         <div className='flex flex-row gap-20'><h1 className='text-3xl my-5 font-extrabold text-[#363949] dark:text-white'>Zeke</h1>
         <button onClick={toggleSidebar} className='md:hidden'><span class="material-symbols-outlined">
                 close
